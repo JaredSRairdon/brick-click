@@ -1,0 +1,210 @@
+/* ======= Section Right ======= */
+.section-right {
+    display: flex;
+    align-self: center;
+    flex: 0 0 auto;
+    flex-direction: column;
+    width: 30%;
+    color: white;
+    text-align: center;
+    align-items: center;
+  }
+
+.section-right h1 {
+  font-family: 'Montserrat';
+  font-weight: bolder;
+  font-size: 4rem;
+  margin: 0;
+  letter-spacing: 0.1rem;
+  text-shadow: 1px 1px #9e3333;
+}
+
+.section-right button {
+  text-shadow: 2px 2px #9e3333;
+}
+
+/* ======= Upgrade Store ======= */
+.upgrade-store {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 20vw;
+  gap: 0.5rem;
+  padding: 2rem;
+  margin: 1rem;
+  border-radius: 2rem;
+  border-right: solid #9e3333 8px;
+  border-bottom: solid #9e3333 5px;
+  background-color: #bc4242;
+}
+
+.upgrade-item-container {
+  border: 1px solid black;
+}
+
+.upgrade-item-container ul {
+  padding-left: 0;
+}
+
+/* ======= Upgrade Item ======= */
+.upgrade-store-item {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat';
+  font-weight: bolder;
+  font-size: auto;
+  height: 6rem;
+  width: 7rem;
+  padding: 0.8rem;
+  color: white;
+  border-radius: 1rem;
+  background-color: #dd7d7d;
+  border-top: solid #9e3333 1px;
+  border-left: solid #9e3333 1px;
+  border-right: solid #9e3333 8px;
+  border-bottom: solid #9e3333 5px;
+  transition: background-color 0.1s ease;
+}
+
+.upgrade-store-item:active {
+  background-color: rgba(0,0,0,0.2);
+}
+
+.upgrade-store-item p {
+  margin: 0;
+}
+
+.upgrade-store-item h1 {
+  margin: 0;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+}
+
+.upgrade-store-item label {
+  margin: 0;
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+} 
+
+
+
+/* ======= Building Store ======= */
+.building-store {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  margin-bottom: 35rem;
+  width: 20vw;
+  border-radius: 2rem;
+  border-right: solid #9e3333 8px;
+  border-bottom: solid #9e3333 5px;
+  background-color: #bc4242;
+}
+
+/* ======= Building Store Item ======= */
+.building-store-item {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  width: 80%;
+  padding: 1rem;
+  gap: 5px;
+  color: white;
+  border-radius: 0.8rem;
+  background-color: #dd7d7d;
+  border-top: solid #9e3333 1px;
+  border-left: solid #9e3333 1px;
+  border-right: solid #9e3333 8px;
+  border-bottom: solid #9e3333 5px;
+  transition: background-color 0.5s, border-color 0.5s ease;
+  font-family: 'Montserrat';
+  font-weight: bolder;
+  font-size: 1rem;
+}
+
+.building-store-item:active {
+  background-color: rgba(0,0,0,0.2);
+}
+
+.building-store-item p {
+  margin: 0;
+}
+
+/* Locked Question Mark */
+.building-store-item h1 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+}
+
+.building-store-item label {
+  margin: 0;
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+}
+
+.locked {
+  background-color: rgb(53, 53, 53);
+  border-color: rgb(43, 43, 43);
+}
+
+.locked:active {
+  background-color: rgb(33, 33, 33);
+}
+
+.locked p {
+  visibility: hidden;
+}
+
+.locked h1 {
+  visibility: visible;
+}
+
+.locked label {
+  visibility: visible;
+}
+
+/* ============ MEDIA QUERIES (MEDIUM DEVICES/TABLET) =========== */
+@media screen and (max-width: 1024px) {
+  .building-store-item {
+    width: 100%;
+  }
+}
+
+/* ============ MEDIA QUERIES (SMALL DEVICES/PHONE) =========== */
+@media screen and (max-width: 600px) {
+  .section-right {
+    width: 70%;
+  }
+
+  .upgrade-store {
+    width: 90%;
+  }
+
+  .building-store {
+    width: 90%;
+  }
+
+  .building-store-item {
+    width: 100%;
+  }
+}

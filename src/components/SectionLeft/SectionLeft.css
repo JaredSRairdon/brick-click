@@ -1,0 +1,219 @@
+/* ======= Section Left ======= */
+.section-left {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: flex-start;
+    width: 30%;
+    text-shadow: 2.5px 2.5px #9e3333;
+  }
+
+/* ======== Bakery Title ======= */
+.bakery-title {
+    text-align: center;
+    width:75%;
+    margin: 1rem 0 1rem 0;
+    padding: 0.3rem;
+    font-size: 1.3rem;
+    border-radius: 18px;
+    color: white;
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* ====== BrickCount ======= */
+.brick-count {
+    display: flex;
+    flex-direction: column;
+    font-weight: bolder;
+    gap: 1rem;
+    justify-content: center;
+    text-align: center;
+    height: 14rem;
+    width: 20vw;
+    padding: 2rem;
+    margin: 1rem;
+    border-radius: 2rem;
+    border-right: solid #9e3333 8px;
+    border-bottom: solid #9e3333 5px;
+    background-color: #bc4242;
+    color: white;
+}
+
+.brick-count p {
+    margin: 0;
+}
+
+.bricks {
+    font-size: 2.5rem;
+}
+
+.bricks-per-second {
+    font-size: 0.9rem;
+}
+
+#per-second {
+  font-size: 1.2rem;
+}
+
+/* ======== Brick ======== */
+.brick {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brick img {
+    max-height: 25rem;
+    max-width: 70%;
+    user-select: none;
+}
+
+.brick-animation {
+    animation: brickAnimation 0.07s ease-in-out;
+}
+
+@keyframes brickAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+
+/* ======== Option Menu ======= */
+.option-menu {
+    display: flex;
+    flex-wrap: wrap;
+    width: 20vw;
+    padding: 2rem;
+    margin: 1rem;
+    gap: 1rem;
+    justify-content: center;
+    text-align: center;
+    border-radius: 2rem;
+    border-right: solid #9e3333 8px;
+    border-bottom: solid #9e3333 5px;
+    background-color: #bc4242;
+
+  }
+  
+.option-menu button {
+  color: white;
+  font-family: 'Montserrat';
+  font-weight: bolder;
+  font-size: 1.5rem;
+  text-shadow: 2.5px 2.5px #9e3333;
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+  border-radius: 0.8rem;
+  background-color: #dd7d7d;
+  border-top: solid #9e3333 1px;
+  border-left: solid #9e3333 1px;
+  border-right: solid #9e3333 8px;
+  border-bottom: solid #9e3333 5px;
+  transition: background-color 0.1s ease;
+}
+
+.option-menu button:active {
+  background-color: rgba(0,0,0,0.2);
+}
+
+/* ======== Buildings ======= */
+.buildings {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+/* ======== Stats ======= */
+.stats {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  justify-content: center;
+  width: 20vw;
+  padding: 3rem 2rem 3rem 2rem;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  color: white;
+  font-family: 'Montserrat';
+  font-weight: bolder;
+  border-radius: 2rem;
+  border-right: solid #9e3333 8px;
+  border-bottom: solid #9e3333 5px;
+  background-color: #bc4242;
+  transition: height 1s ease-in-out;
+  gap: 1rem;
+  height: 0;
+}
+
+.stats.show-stats {
+  height: 61rem;
+  transition: height 1s ease-in-out;
+}
+
+.stats hr {
+  width: 60%;
+}
+
+.stats h1 {
+  margin: 0;
+}
+
+.stats label {
+  font-size: 0.8rem;
+  padding: 0;
+}
+
+.stats button {
+  color: white;
+  font-family: 'Montserrat';
+  font-weight: bolder;
+  font-size: 1.5rem;
+  text-shadow: 2.5px 2.5px #9e3333;
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 0.6rem;
+  background-color: #dd7d7d;
+  border-top: solid #9e3333 1px;
+  border-left: solid #9e3333 1px;
+  border-right: solid #9e3333 8px;
+  border-bottom: solid #9e3333 5px;
+  transition: background-color 0.1s ease;
+  width: auto;
+  align-self: center;
+}
+
+.stats button:active {
+  background-color: rgba(0,0,0,0.2);
+}
+
+.stats p {
+  margin: 0.5rem;
+}
+
+/* ============ MEDIA QUERIES (MEDIUM DEVICES/TABLET) =========== */
+@media screen and (max-width: 1024px) {
+
+}
+
+/* ============ MEDIA QUERIES (SMALL DEVICES/PHONE) =========== */
+@media screen and (max-width: 600px) {
+  .section-left {
+    width: 70%;
+  }
+
+  .brick-count {
+    width: 90%;
+  }
+
+  .brick img {
+    max-width: 90%;
+  }
+
+  .option-menu {
+    width: 90%;
+  }
+
+  .stats {
+    width: 90%;
+  }
+}
