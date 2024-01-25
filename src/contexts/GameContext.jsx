@@ -11,7 +11,12 @@ const GameProvider = ({ children }) => {
   const [clickPower, setClickPower] = useState(1);
 
   // Player stats object, contains building names and how many the player owns
-  const [playerStats, setPlayerStats] = useState({buildingCount: {
+  const [playerStats, setPlayerStats] = useState({playerName: "",
+                                                  bakeryName: "",
+                                                  brickCount: 0,
+                                                  bricksPerSecond: 0,
+                                                  clickPower: 0,
+                                                  buildingCount: {
                                                     "Building": 0,
                                                     "Trowel": 0,
                                                     "Wheelbarrow": 0,
@@ -50,6 +55,31 @@ const GameProvider = ({ children }) => {
   //   { name: "Brick Government", currentPrice: 5100000000, basePrice: 5100000000, unlockCondition: 1,},
   //   { name: "Holy Church of Bricks", currentPrice: 75000000000, basePrice:75000000000, unlockCondition: 1,},
   // ]);
+
+  // TODO: Integrate existing functions with new Store react state
+  const [store, setStore] = useState({
+    playerUpgrades: [
+      { id: 1, name:"Reinforced Finger", price:0, modifier:5 },
+      { id: 2, name:"Steel Pointer", price:0, modifier:5 },
+      { id: 3, name:"Golden Lad", price:0, modifier:5 },
+      { id: 4, name:"Platinum Poke", price:0, modifier:5 },
+      { id: 5, name:"God Touch", price:0, modifier:5 }
+
+    ],
+    buildingUpgrades: [
+      { id: 1, name:"Trowel", basePrice:0, currentPrice:0, modifier:5 },
+      { id: 2, name:"Wheelbarrow", basePrice:0, currentPrice:0, modifier:5 },
+      { id: 3, name:"Oven", basePrice:0, currentPrice:0, modifier:5 },
+      { id: 4, name:"Factory", basePrice:0, currentPrice:0, modifier:5 },
+      { id: 5, name:"Nuclear Brick Plant", basePrice:0, currentPrice:0, modifier:5 },
+      { id: 6, name:"Brick Cultivation Pods", basePrice:0, currentPrice:0, modifier:5 },
+      { id: 7, name:"Brick-a-tron", basePrice:0, currentPrice:0, modifier:5 },
+      { id: 8, name:"Mother of Bricks", basePrice:0, currentPrice:0, modifier:5 },
+      { id: 9, name:"Brick Government", basePrice:0, currentPrice:0, modifier:5 },
+      { id: 10, name:"Holy Church of Bricks", basePrice:0, currentPrice:0, modifier:5 },
+
+    ],
+  })
 
   // Store prices object, contains inventory items + price 
   const [storePrices, setStorePrices] = useState({  
