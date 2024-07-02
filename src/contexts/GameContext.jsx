@@ -11,73 +11,33 @@ const GameProvider = ({ children }) => {
   const [clickPower, setClickPower] = useState(1);
 
   // Player stats object, contains building names and how many the player owns
-  const [playerStats, setPlayerStats] = useState({buildingCount: {
-                                                    "Building": 0,
-                                                    "Trowel": 0,
-                                                    "Wheelbarrow": 0,
-                                                    "Oven": 0,
-                                                    "Factory": 0,
-                                                    "Nuclear Brick Plant": 0,
-                                                    "Brick Cultivation Pods": 0,
-                                                    "Brick-a-tron": 0,
-                                                    "Mother of Bricks": 0,
-                                                    "Brick Government": 0,
-                                                    "Holy Church of Bricks": 0,
-                                                  },
-                                                  upgradeCount: {
-                                                    "Trowel": 0,
-                                                    "Wheelbarrow": 0,
-                                                    "Oven": 0,
-                                                    "Factory": 0,
-                                                    "Nuclear Brick Plant": 0,
-                                                    "Brick Cultivation Pods": 0,
-                                                    "Brick-a-tron": 0,
-                                                    "Mother of Bricks": 0,
-                                                    "Brick Government": 0,
-                                                    "Holy Church of Bricks": 0,
-                                                  }
+  const [playerStats, setPlayerStats] = useState({
+    "Building": { count: 0, upgrades: 0 },
+    "Trowel": { count: 0, upgrades: 0 },
+    "Wheelbarrow": { count: 0, upgrades: 0 },
+    "Oven": { count: 0, upgrades: 0 },
+    "Factory": { count: 0, upgrades: 0 },
+    "Nuclear Brick Plant": { count: 0, upgrades: 0 },
+    "Brick Cultivation Pods": { count: 0, upgrades: 0 },
+    "Brick-a-tron": { count: 0, upgrades: 0 },
+    "Mother of Bricks": { count: 0, upgrades: 0 },
+    "Brick Government": { count: 0, upgrades: 0 },
+    "Holy Church of Bricks": { count: 0, upgrades: 0 }
   });
 
-  // const [buildingStats, setBuildingStats] = useState([
-  //   { name: 'Trowel', currentPrice: 15, basePrice: 15, unlockCondition: 1, },
-  //   { name: 'Wheelbarrow', currentPrice: 100, basePrice: 100, unlockCondition: 1, },
-  //   { name: "Oven", currentPrice: 11000, basePrice: 11000, unlockCondition: 1,},
-  //   { name: "Factory", currentPrice: 12000, basePrice: 12000, unlockCondition: 1,},
-  //   { name: "Nuclear Brick Plant", currentPrice: 130000, basePrice: 130000, unlockCondition: 1,},
-  //   { name: "Brick Cultivation Pods", currentPrice: 1400000, basePrice: 1400000, unlockCondition: 1,},
-  //   { name: "Brick-a-tron", currentPrice: 20000000, basePrice: 20000000, unlockCondition: 1,},
-  //   { name: "Mother of Bricks", currentPrice: 330000000, basePrice: 330000000, unlockCondition: 1,},
-  //   { name: "Brick Government", currentPrice: 5100000000, basePrice: 5100000000, unlockCondition: 1,},
-  //   { name: "Holy Church of Bricks", currentPrice: 75000000000, basePrice:75000000000, unlockCondition: 1,},
-  // ]);
-
-  // Store prices object, contains inventory items + price 
-  const [storePrices, setStorePrices] = useState({  
-    "Trowel": 15,
-    "Wheelbarrow": 100,
-    "Oven": 11000,
-    "Factory": 12000,
-    "Nuclear Brick Plant": 130000,
-    "Brick Cultivation Pods": 1400000,
-    "Brick-a-tron": 20000000,
-    "Mother of Bricks": 330000000,
-    "Brick Government": 5100000000,
-    "Holy Church of Bricks": 75000000000,
-  })
-
-  // Base store prices for each item (before cost increases)
-  const basePrices = {  
-    "Trowel": 15,
-    "Wheelbarrow": 100,
-    "Oven": 11000,
-    "Factory": 12000,
-    "Nuclear Brick Plant": 130000,
-    "Brick Cultivation Pods": 1400000,
-    "Brick-a-tron": 20000000,
-    "Mother of Bricks": 330000000,
-    "Brick Government": 5100000000,
-    "Holy Church of Bricks": 75000000000,
-  }
+  // Store prices object, contains inventory items + price and base price
+  const [storePrices, setStorePrices] = useState({
+    "Trowel": { currentPrice: 15, basePrice: 15 },
+    "Wheelbarrow": { currentPrice: 100, basePrice: 100 },
+    "Oven": { currentPrice: 11000, basePrice: 11000 },
+    "Factory": { currentPrice: 12000, basePrice: 12000 },
+    "Nuclear Brick Plant": { currentPrice: 130000, basePrice: 130000 },
+    "Brick Cultivation Pods": { currentPrice: 1400000, basePrice: 1400000 },
+    "Brick-a-tron": { currentPrice: 20000000, basePrice: 20000000 },
+    "Mother of Bricks": { currentPrice: 330000000, basePrice: 330000000 },
+    "Brick Government": { currentPrice: 5100000000, basePrice: 5100000000 },
+    "Holy Church of Bricks": { currentPrice: 75000000000, basePrice: 75000000000 }
+  });
 
   // Function to increment brickCount by the user's clickPower amount (called when user clicks the brick)
   const incrementBrickCount = (clickPower) => {
@@ -142,35 +102,43 @@ const GameProvider = ({ children }) => {
   const resetStats = () => {
     // Object.keys(playerStats).forEach((i) => playerStats[i] = 0);
     // Object.keys(storePrices).forEach((i) => storePrices[i] = basePrices[i]);
-    setPlayerStats({
-      buildingCount: {
-        "Building": 0,
-        "Trowel": 0,
-        "Wheelbarrow": 0,
-        "Oven": 0,
-        "Factory": 0,
-        "Nuclear Brick Plant": 0,
-        "Brick Cultivation Pods": 0,
-        "Brick-a-tron": 0,
-        "Mother of Bricks": 0,
-        "Brick Government": 0,
-        "Holy Church of Bricks": 0,
-      },
-      upgradeCount: {
-        "Trowel": 0,
-        "Wheelbarrow": 0,
-        "Oven": 0,
-        "Factory": 0,
-        "Nuclear Brick Plant": 0,
-        "Brick Cultivation Pods": 0,
-        "Brick-a-tron": 0,
-        "Mother of Bricks": 0,
-        "Brick Government": 0,
-        "Holy Church of Bricks": 0,
+    // setPlayerStats({
+    //   buildingCount: {
+    //     "Building": 0,
+    //     "Trowel": 0,
+    //     "Wheelbarrow": 0,
+    //     "Oven": 0,
+    //     "Factory": 0,
+    //     "Nuclear Brick Plant": 0,
+    //     "Brick Cultivation Pods": 0,
+    //     "Brick-a-tron": 0,
+    //     "Mother of Bricks": 0,
+    //     "Brick Government": 0,
+    //     "Holy Church of Bricks": 0,
+    //   },
+    //   upgradeCount: {
+    //     "Trowel": 0,
+    //     "Wheelbarrow": 0,
+    //     "Oven": 0,
+    //     "Factory": 0,
+    //     "Nuclear Brick Plant": 0,
+    //     "Brick Cultivation Pods": 0,
+    //     "Brick-a-tron": 0,
+    //     "Mother of Bricks": 0,
+    //     "Brick Government": 0,
+    //     "Holy Church of Bricks": 0,
+    //   }
+    // });
+
+    // Not sure if this works
+    setStorePrices(prevPrices => {
+      const resetPrices = {};
+      for (const key in prevPrices) {
+        resetPrices[key] = { ...prevPrices[key], currentPrice: prevPrices[key].basePrice };
       }
+      return resetPrices;
     });
 
-    setStorePrices(basePrices);
     setBrickCount(0);
     setBricksPerSecond(0);
     setClickPower(1);
@@ -191,7 +159,6 @@ const GameProvider = ({ children }) => {
     resetStats,
     storePrices,
     setStorePrices,
-    basePrices,
   };
 
   return (
