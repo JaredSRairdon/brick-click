@@ -12,6 +12,12 @@ const GameProvider = ({ children }) => {
 
   // Player stats object, contains building names and how many the player owns
   const [playerStats, setPlayerStats] = useState({
+  "playerName": "Player 1",
+  "bakeryName": "Brick Bakery",
+  "brickCount": 0,
+  "bricksPerSecond": 0,
+  "clickPower": 1, 
+  "buildingStats":  {
     "Building": { count: 0, upgrades: 0 },
     "Trowel": { count: 0, upgrades: 0 },
     "Wheelbarrow": { count: 0, upgrades: 0 },
@@ -23,6 +29,7 @@ const GameProvider = ({ children }) => {
     "Mother of Bricks": { count: 0, upgrades: 0 },
     "Brick Government": { count: 0, upgrades: 0 },
     "Holy Church of Bricks": { count: 0, upgrades: 0 }
+  }
   });
 
   // Store prices object, contains inventory items + price and base price
@@ -40,8 +47,13 @@ const GameProvider = ({ children }) => {
   });
 
   // Function to increment brickCount by the user's clickPower amount (called when user clicks the brick)
-  const incrementBrickCount = (clickPower) => {
-    setBrickCount((prevBricks) => prevBricks + clickPower);
+  const incrementBrickCountByClickPower = () => {
+    setPlayerStats((prevPlayerStats) => ({
+      ...prevPlayerStats,
+      brickCount: prevPlayerStats.brickCount + playerStats.clickPower,
+    }));
+    console.log(playerStats)
+    console.log(playerStats.clickPower)
   };
 
   // Loads the saved score for each stat from localStorage
@@ -86,17 +98,18 @@ const GameProvider = ({ children }) => {
   }, [bricksPerSecond]);
 
   // Saves player stats to localStorage every 100ms
-  useEffect(() => {
-    const saveInterval = setInterval(() => {
-      localStorage.setItem('brickCount', brickCount.toString());
-      localStorage.setItem('bricksPerSecond', bricksPerSecond.toString());
-      localStorage.setItem('clickPower', clickPower.toString());
-      localStorage.setItem('storePrices', JSON.stringify(storePrices))
-      localStorage.setItem('playerStats', JSON.stringify(playerStats));
-    }, 100);
+  // useEffect(() => {
+  //   const saveInterval = setInterval(() => {
+  //     // localStorage.setItem('brickCount', brickCount.toString());
+  //     // localStorage.setItem('bricksPerSecond', bricksPerSecond.toString());
+  //     // localStorage.setItem('clickPower', clickPower.toString());
+  //     console.log(JSON.stringify(playerStats))
+  //     localStorage.setItem('storePrices', JSON.stringify(storePrices))
+  //     localStorage.setItem('playerStats', JSON.stringify(playerStats));
+  //   }, 100);
 
-    return () => clearInterval(saveInterval);
-  }, [brickCount, bricksPerSecond, clickPower]);
+  //   return () => clearInterval(saveInterval);
+  // }, [brickCount, bricksPerSecond, clickPower]);
 
   // Function to reset all player stats/store price items
   const resetStats = () => {
@@ -149,7 +162,7 @@ const GameProvider = ({ children }) => {
   const contextValue = {
     brickCount,
     setBrickCount,
-    incrementBrickCount,
+    incrementBrickCountByClickPower,
     bricksPerSecond,
     setBricksPerSecond,
     clickPower,

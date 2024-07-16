@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { GameContext } from '../../contexts/GameContext'
 
 function BrickCount() {
-  const {brickCount, bricksPerSecond, clickPower} = useContext(GameContext);
+  const {bricksPerSecond, playerStats} = useContext(GameContext);
 
   function abbreviateNum(num) {
     const abbreviations = ['', 'thousand', 'million', 'billion', 'trillion', 'quadrillion', 'quintillion'];
@@ -39,7 +39,7 @@ function BrickCount() {
     return formatted + ' ' + abbreviation;
   }
 
-  const formattedBrickCount = abbreviateNum(brickCount).toLocaleString("en-us");
+  const formattedBrickCount = abbreviateNum(playerStats.brickCount).toLocaleString("en-us");
   const roundedBricksPerSecond = bricksPerSecond.toFixed(1).toLocaleString("en-us");
 
   return (
@@ -52,7 +52,7 @@ function BrickCount() {
         <div className='bricks-per-second'>
           <p id='per-second'>Per Second: {roundedBricksPerSecond}</p>
           <br/>
-          <p id='click-power'>Click Power: {Math.trunc(clickPower).toLocaleString('en-us')}</p>
+          <p id='click-power'>Click Power: {Math.trunc(playerStats.clickPower).toLocaleString('en-us')}</p>
         </div>
       </div>
     </>

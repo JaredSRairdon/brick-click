@@ -3,11 +3,11 @@ import brick_main from './../../assets/brick_main.png'
 import { GameContext } from '../../contexts/GameContext'
 
 function Brick() {
-  const { brickCount, incrementBrickCount, clickPower } = useContext(GameContext);
+  const { brickCount, incrementBrickCountByClickPower, clickPower } = useContext(GameContext);
   const [isAnimating, setIsAnimating] = useState(false);
 
   const handleClick = () => {
-    incrementBrickCount(clickPower);
+    incrementBrickCountByClickPower(clickPower);
     
     if (!isAnimating) {
       setIsAnimating(true);
