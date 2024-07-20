@@ -7,7 +7,7 @@ function OptionMenu({handleClick}) {
   return (
     <div className='option-menu'>
       <button onClick={handleClick}>Stats</button>
-      <button>Info</button>
+      {/* <button>Info</button> */}
     </div>
   )
 }

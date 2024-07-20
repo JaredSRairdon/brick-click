@@ -1,28 +1,27 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { GameContext } from '../../contexts/GameContext'
 
-function UpgradeStoreItem({ upgradeName, upgradePrice, upgradePower }) {
-  const {brickCount, setBrickCount, setClickPower} = useContext(GameContext);
-  const [isLocked, setIsLocked] = useState(true);
+function UpgradeStoreItem({ upgradeName }) {
+  const { clickUpgrades, purchaseUpgrade, playerStats } = useContext(GameContext);
+  const clickUpgrade = clickUpgrades[upgradeName]
+  const [isLocked, setIsLocked] = useState(false);
 
+  // Sets the item to locked if the player cannot afford it
   useEffect(() => {
-    setIsLocked(brickCount < upgradePrice);
-  }, [brickCount, upgradePrice])
+    setIsLocked(playerStats.brickCount < clickUpgrade.currentPrice);
+  }, [playerStats.brickCount, clickUpgrade.currentPrice])
 
   const handleUpgrade = () => {
-    if (brickCount >= upgradePrice) {
-      setBrickCount((prevBC) => prevBC - upgradePrice);
-      setClickPower((prevCP) => (prevCP * upgradePower) + prevCP)
-    }
+    purchaseUpgrade(upgradeName)
   }
 
   return (
     <button className={`upgrade-store-item ${isLocked ? "locked":""}`} onClick={handleUpgrade}>
         <p>{upgradeName}</p>
-        <p>{upgradePrice}🧱</p>
-        <p>{upgradePower}x</p>
+        <p>{clickUpgrade.currentPrice.toLocaleString("en-us", { maximumFractionDigits: 0 })}🧱</p>
+        <p>{clickUpgrade.upgradePower}x</p>
         <h1>?</h1>
-        <label>{upgradePrice.toLocaleString("en-us")}</label>
+        <label>{clickUpgrade.currentPrice.toLocaleString("en-us", { maximumFractionDigits: 0 })}</label>
     </button>
   )
 }
