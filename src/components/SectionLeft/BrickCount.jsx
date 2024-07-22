@@ -50,7 +50,7 @@ function BrickCount() {
           <p>Bricks</p>
         </div>
         <div className='bricks-per-second'>
-          <p id='per-second'>Per Second: {roundedBricksPerSecond}</p>
+          <p id='per-second'>Per Second: {roundedBricksPerSecond.toFixed(1).toLocaleString('en-us')}</p>
           <br/>
           <p id='click-power'>Click Power: {Math.trunc(playerStats.clickPower).toLocaleString('en-us')}</p>
         </div>

@@ -3,7 +3,7 @@ import React from 'react'
 function BakeryTitle() {
   return (
     <div className='bakery-title'>
-      Jared's Brick Bakery
+      My First Brick Bakery
     </div>
   )
 }
