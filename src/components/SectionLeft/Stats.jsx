@@ -4,6 +4,44 @@ import { GameContext } from '../../contexts/GameContext'
 function Stats({showStats}) {
     const { playerStats, resetStats } = useContext(GameContext);
 
+    function abbreviateNum(num) {
+        const abbreviations = ['', 'thousand', 'million', 'billion', 'trillion', 'quadrillion', 'quintillion'];
+        const abbreviationsLength = abbreviations.length;
+    
+        let magnitude = Math.floor(Math.log10(num) / 3);
+    
+        // Check if the number is beyond the supported magnitudes
+        if (magnitude >= abbreviationsLength) {
+          return Math.trunc(num);
+        }
+    
+        // Check if the number is 0
+        if (num < 1) {
+          return 0;
+        }
+    
+        // Check if the number is below 1 million
+        if (magnitude < 2) {
+          return Math.trunc(num);
+        }
+    
+        let abbreviation = abbreviations[magnitude];
+    
+        // Calculate the division factor
+        let divisor = Math.pow(10, magnitude * 3);
+    
+        // Calculate the converted value
+        let converted = num / divisor;
+    
+        // Format the converted value with 2 decimal places
+        let formatted = converted.toFixed(2);
+    
+        return formatted + ' ' + abbreviation;
+    }
+
+    const formattedBrickCount = abbreviateNum(playerStats.brickCount).toLocaleString("en-us");
+    const formattedBricksPerSecond = abbreviateNum(playerStats.brickCount).toLocaleString("en-us");
+
     return (
     <div className={`stats ${showStats ? "show-stats":""}`}>
         <h1>Stats</h1>
@@ -11,8 +49,8 @@ function Stats({showStats}) {
             <hr/>
             <p>Player Stats</p>
             <hr/>
-            <p>Brick Count  <br/> {Math.trunc(playerStats.brickCount).toLocaleString('en-us')}</p>
-            <p>Bricks  <br/> <label>per second</label> <br/> {playerStats.bricksPerSecond.toFixed(1).toLocaleString('en-us')}</p>
+            <p>Brick Count  <br/> {formattedBrickCount}</p>
+            <p>Bricks  <br/> <label>per second</label> <br/> {formattedBricksPerSecond}</p>
             <p>Click Power <br/> {playerStats.clickPower.toLocaleString('en-us')}</p>
         </div>
 
@@ -32,7 +70,7 @@ function Stats({showStats}) {
                 <p>Holy Churches of Bricks <br /> {playerStats.buildingStats["Holy Church of Bricks"]?.count || 0}</p>
             </div>
 
-        {/* <button onClick={resetStats}>Reset Stats</button> */}
+        <button onClick={resetStats}>Reset Stats</button>
     </div>
     )
 }

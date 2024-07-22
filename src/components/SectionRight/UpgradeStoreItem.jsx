@@ -3,14 +3,20 @@ import { GameContext } from '../../contexts/GameContext'
 
 function UpgradeStoreItem({ upgradeName }) {
   const { clickUpgrades, purchaseUpgrade, playerStats } = useContext(GameContext);
-  const clickUpgrade = clickUpgrades[upgradeName]
   const [isLocked, setIsLocked] = useState(true);
   const [isPurchased, setIsPurchased] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
+  const clickUpgrade = clickUpgrades[upgradeName]
+  const relatedBuilding = clickUpgrade.relatedBuilding;
+
   useEffect(() => {
     setIsLocked(playerStats.brickCount < clickUpgrade.currentPrice);
-    setIsVisible((playerStats.brickCount > (clickUpgrade.currentPrice * 0.50)));
+    setIsVisible(
+      (playerStats.brickCount > (clickUpgrade.currentPrice * 0.50))
+      &&
+      (playerStats.buildingStats[relatedBuilding].count > 0)
+    );
     setIsPurchased(clickUpgrade.count > 0);
   }, [playerStats.brickCount])
 
