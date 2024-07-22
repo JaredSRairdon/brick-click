@@ -17,7 +17,7 @@ function BrickCount() {
 
     // Check if the number is 0
     if (num < 1) {
-      return 0;
+      return num;
     }
 
     // Check if the number is below 1 million
@@ -40,7 +40,7 @@ function BrickCount() {
   }
 
   const formattedBrickCount = abbreviateNum(playerStats.brickCount).toLocaleString("en-us");
-  const formattedBricksPerSecond = abbreviateNum(playerStats.brickCount).toLocaleString("en-us");
+  const formattedBricksPerSecond = abbreviateNum(playerStats.bricksPerSecond).toLocaleString("en-us");
 
   return (
     <>
