@@ -29,7 +29,7 @@ const GameProvider = ({ children }) => {
     storePrices: {
       "Trowel": { currentPrice: 15, basePrice: 15, bpsUpgradeAmount: 0.2 },
       "Wheelbarrow": { currentPrice: 100, basePrice: 100, bpsUpgradeAmount: 1 },
-      "Oven": { currentPrice: 11000, basePrice: 11000, bpsUpgradeAmount: 5 },
+      "Oven": { currentPrice: 1100, basePrice: 1100, bpsUpgradeAmount: 5 },
       "Factory": { currentPrice: 12000, basePrice: 12000, bpsUpgradeAmount: 10 },
       "Nuclear Brick Plant": { currentPrice: 130000, basePrice: 130000, bpsUpgradeAmount: 100 },
       "Brick Cultivation Pods": { currentPrice: 1400000, basePrice: 1400000, bpsUpgradeAmount: 1000 },
@@ -45,59 +45,59 @@ const GameProvider = ({ children }) => {
       "Golden Blade": { currentPrice: 50000, upgradePower: 2, count: 0, relatedBuilding: "Trowel" },
       "Turbo Trowel": { currentPrice: 10000, upgradePower: 2, count: 0, relatedBuilding: "Trowel" },
 
-      "All-Terrain Tires": { currentPrice: 250, upgradePower: 2, count: 0, relatedBuilding: "Wheelbarrow" },
-      "Bronze Tub": { currentPrice: 1250, upgradePower: 1.25, count: 0, relatedBuilding: "Wheelbarrow" },
-      "Silver Tub": { currentPrice: 7500, upgradePower: 1.25, count: 0, relatedBuilding: "Wheelbarrow" },
-      "Golden Tub": { currentPrice: 25000, upgradePower: 1.25, count: 0, relatedBuilding: "Wheelbarrow" },
-      "Turbo Boosted V6": { currentPrice: 50000, upgradePower: 1.25, count: 0, relatedBuilding: "Wheelbarrow" },
+      "All-Terrain Tires": { currentPrice: 250, upgradePower: 1, count: 0, relatedBuilding: "Wheelbarrow" },
+      "Bronze Tub": { currentPrice: 1250, upgradePower: 1, count: 0, relatedBuilding: "Wheelbarrow" },
+      "Silver Tub": { currentPrice: 7500, upgradePower: 1, count: 0, relatedBuilding: "Wheelbarrow" },
+      "Golden Tub": { currentPrice: 25000, upgradePower: 1, count: 0, relatedBuilding: "Wheelbarrow" },
+      "Turbo Boosted V6": { currentPrice: 50000, upgradePower: 1, count: 0, relatedBuilding: "Wheelbarrow" },
 
-      "Electric Stove": { currentPrice: 500, upgradePower: 2, count: 0, relatedBuilding: "Oven" },
-      "Gas-Powered Cooker": { currentPrice: 2250, upgradePower: 1.25, count: 0, relatedBuilding: "Oven" },
-      "Silver-plated Door": { currentPrice: 8850, upgradePower: 1.25, count: 0, relatedBuilding: "Oven" },
-      "Crystal Glass": { currentPrice: 35000, upgradePower: 1.25, count: 0, relatedBuilding: "Oven" },
-      "The Oven Light": { currentPrice: 75000, upgradePower: 1.25, count: 0, relatedBuilding: "Oven" },
+      "Electric Stove": { currentPrice: 500, upgradePower: 1, count: 0, relatedBuilding: "Oven" },
+      "Gas-Powered Cooker": { currentPrice: 2250, upgradePower: 1, count: 0, relatedBuilding: "Oven" },
+      "Silver-plated Door": { currentPrice: 8850, upgradePower: 1, count: 0, relatedBuilding: "Oven" },
+      "Crystal Glass": { currentPrice: 35000, upgradePower: 1, count: 0, relatedBuilding: "Oven" },
+      "The Oven Light": { currentPrice: 75000, upgradePower: 1, count: 0, relatedBuilding: "Oven" },
 
-      "Reinforced Forklifts": { currentPrice: 7500, upgradePower: 2, count: 0, relatedBuilding: "Factory" },
-      "OSHA Violations": { currentPrice: 40000, upgradePower: 1.25, count: 0, relatedBuilding: "Factory" },
-      "Amazon Urine Bottles": { currentPrice: 90000, upgradePower: 1.25, count: 0, relatedBuilding: "Factory" },
-      "Weather-Proof Doors": { currentPrice: 375000, upgradePower: 1.25, count: 0, relatedBuilding: "Factory" },
-      "Brick Overseer": { currentPrice: 850000, upgradePower: 1.25, count: 0, relatedBuilding: "Factory" },
+      "Reinforced Forklifts": { currentPrice: 7500, upgradePower: 1, count: 0, relatedBuilding: "Factory" },
+      "OSHA Violations": { currentPrice: 40000, upgradePower: 1, count: 0, relatedBuilding: "Factory" },
+      "Amazon Urine Bottles": { currentPrice: 90000, upgradePower: 1, count: 0, relatedBuilding: "Factory" },
+      "Weather-Proof Doors": { currentPrice: 375000, upgradePower: 1, count: 0, relatedBuilding: "Factory" },
+      "Brick Overseer": { currentPrice: 850000, upgradePower: 1, count: 0, relatedBuilding: "Factory" },
 
-      "Certified Engineers": { currentPrice: 1000, upgradePower: 2, count: 0, relatedBuilding: "Nuclear Brick Plant" },
-      "Overheat Protection": { currentPrice: 5500, upgradePower: 1.25, count: 0, relatedBuilding: "Nuclear Brick Plant" },
-      "Homer Simpson": { currentPrice: 95000, upgradePower: 1.25, count: 0, relatedBuilding: "Nuclear Brick Plant" },
-      "Radroach Infestation": { currentPrice: 450000, upgradePower: 1.25, count: 0, relatedBuilding: "Nuclear Brick Plant" },
-      "Mortar Meltdown": { currentPrice: 1000000, upgradePower: 1.25, count: 0, relatedBuilding: "Nuclear Brick Plant" },
+      "Certified Engineers": { currentPrice: 1000, upgradePower: 1, count: 0, relatedBuilding: "Nuclear Brick Plant" },
+      "Overheat Protection": { currentPrice: 5500, upgradePower: 1, count: 0, relatedBuilding: "Nuclear Brick Plant" },
+      "Homer Simpson": { currentPrice: 95000, upgradePower: 1, count: 0, relatedBuilding: "Nuclear Brick Plant" },
+      "Radroach Infestation": { currentPrice: 450000, upgradePower: 1, count: 0, relatedBuilding: "Nuclear Brick Plant" },
+      "Mortar Meltdown": { currentPrice: 1000000, upgradePower: 1, count: 0, relatedBuilding: "Nuclear Brick Plant" },
 
-      "Climate Controlled Pods": { currentPrice: 12500, upgradePower: 2, count: 0, relatedBuilding: "Brick Cultivation Pods" },
-      "Nutrient-Rich Additives": { currentPrice: 72500, upgradePower: 1.25, count: 0, relatedBuilding: "Brick Cultivation Pods" },
-      "Sustainable Energy Sources": { currentPrice: 125000, upgradePower: 1.25, count: 0, relatedBuilding: "Brick Cultivation Pods" },
-      "Crystal Glass Tubes": { currentPrice: 600000, upgradePower: 1.25, count: 0, relatedBuilding: "Brick Cultivation Pods" },
-      "Jeff Goldbluum": { currentPrice: 1200000, upgradePower: 1.25, count: 0, relatedBuilding: "Brick Cultivation Pods" },
+      "Climate Controlled Pods": { currentPrice: 12500, upgradePower: 1, count: 0, relatedBuilding: "Brick Cultivation Pods" },
+      "Nutrient-Rich Additives": { currentPrice: 72500, upgradePower: 1, count: 0, relatedBuilding: "Brick Cultivation Pods" },
+      "Sustainable Energy Sources": { currentPrice: 125000, upgradePower: 1, count: 0, relatedBuilding: "Brick Cultivation Pods" },
+      "Crystal Glass Tubes": { currentPrice: 600000, upgradePower: 1, count: 0, relatedBuilding: "Brick Cultivation Pods" },
+      "Jeff Goldbluum": { currentPrice: 1200000, upgradePower: 1, count: 0, relatedBuilding: "Brick Cultivation Pods" },
 
-      "Golden Arm": { currentPrice: 30000, upgradePower: 2, count: 0, relatedBuilding: "Brick-a-tron" },
-      "Voltron's Head": { currentPrice: 60000, upgradePower: 1.25, count: 0, relatedBuilding: "Brick-a-tron" },
-      "The Leg": { currentPrice: 120000, upgradePower: 1.25, count: 0, relatedBuilding: "Brick-a-tron" },
-      "The Arms": { currentPrice: 250000, upgradePower: 1.25, count: 0, relatedBuilding: "Brick-a-tron" },
-      "The Platinum Heart": { currentPrice: 1000000, upgradePower: 1.25, count: 0, relatedBuilding: "Brick-a-tron" },
+      "Golden Arm": { currentPrice: 30000, upgradePower: 1, count: 0, relatedBuilding: "Brick-a-tron" },
+      "Voltron's Head": { currentPrice: 60000, upgradePower: 1, count: 0, relatedBuilding: "Brick-a-tron" },
+      "The Leg": { currentPrice: 120000, upgradePower: 1, count: 0, relatedBuilding: "Brick-a-tron" },
+      "The Arms": { currentPrice: 250000, upgradePower: 1, count: 0, relatedBuilding: "Brick-a-tron" },
+      "The Platinum Heart": { currentPrice: 1000000, upgradePower: 1, count: 0, relatedBuilding: "Brick-a-tron" },
 
-      "Care": { currentPrice: 1000000, upgradePower: 2, count: 0, relatedBuilding: "Mother of Bricks" },
-      "Love": { currentPrice: 2000000, upgradePower: 2, count: 0, relatedBuilding: "Mother of Bricks" },
-      "Joy": { currentPrice: 3000000, upgradePower: 2, count: 0, relatedBuilding: "Mother of Bricks" },
-      "Grace": { currentPrice: 4000000, upgradePower: 2, count: 0, relatedBuilding: "Mother of Bricks" },
-      "And Everything Nice": { currentPrice: 5000000, upgradePower: 2, count: 0, relatedBuilding: "Mother of Bricks" },
+      "Care": { currentPrice: 1000000, upgradePower: 1, count: 0, relatedBuilding: "Mother of Bricks" },
+      "Love": { currentPrice: 2000000, upgradePower: 1, count: 0, relatedBuilding: "Mother of Bricks" },
+      "Joy": { currentPrice: 3000000, upgradePower: 1, count: 0, relatedBuilding: "Mother of Bricks" },
+      "Grace": { currentPrice: 4000000, upgradePower: 1, count: 0, relatedBuilding: "Mother of Bricks" },
+      "And Everything Nice": { currentPrice: 5000000, upgradePower: 1, count: 0, relatedBuilding: "Mother of Bricks" },
 
-      "The Executive Branch": { currentPrice: 10000000, upgradePower: 2, count: 0, relatedBuilding: "Brick Government" },
-      "The Judicial Branch": { currentPrice: 20000000, upgradePower: 2, count: 0, relatedBuilding: "Brick Government" },
-      "The Legislative Branch": { currentPrice: 30000000, upgradePower: 2, count: 0, relatedBuilding: "Brick Government" },
-      "Bricks and Corruption": { currentPrice: 40000000, upgradePower: 2, count: 0, relatedBuilding: "Brick Government" },
-      "Brick Republic": { currentPrice: 50000000, upgradePower: 2, count: 0, relatedBuilding: "Brick Government" },
+      "The Executive Branch": { currentPrice: 10000000, upgradePower: 1, count: 0, relatedBuilding: "Brick Government" },
+      "The Judicial Branch": { currentPrice: 20000000, upgradePower: 1, count: 0, relatedBuilding: "Brick Government" },
+      "The Legislative Branch": { currentPrice: 30000000, upgradePower: 1, count: 0, relatedBuilding: "Brick Government" },
+      "Bricks and Corruption": { currentPrice: 40000000, upgradePower: 1, count: 0, relatedBuilding: "Brick Government" },
+      "Brick Republic": { currentPrice: 50000000, upgradePower: 1, count: 0, relatedBuilding: "Brick Government" },
 
-      "The Holy Brick Prayer": { currentPrice: 100000000, upgradePower: 2, count: 0, relatedBuilding: "Holy Church of Bricks" },
-      "Brick Wednesday": { currentPrice: 200000000, upgradePower: 2, count: 0, relatedBuilding: "Holy Church of Bricks" },
-      "Brick-or-Treat": { currentPrice: 300000000, upgradePower: 2, count: 0, relatedBuilding: "Holy Church of Bricks" },
-      "Feeding the Brickless": { currentPrice: 400000000, upgradePower: 2, count: 0, relatedBuilding: "Holy Church of Bricks" },
-      "Pope Brick-cis": { currentPrice: 500000000, upgradePower: 2, count: 0, relatedBuilding: "Holy Church of Bricks" },
+      "The Holy Brick Prayer": { currentPrice: 100000000, upgradePower: 1, count: 0, relatedBuilding: "Holy Church of Bricks" },
+      "Brick Wednesday": { currentPrice: 200000000, upgradePower: 1, count: 0, relatedBuilding: "Holy Church of Bricks" },
+      "Brick-or-Treat": { currentPrice: 300000000, upgradePower: 1, count: 0, relatedBuilding: "Holy Church of Bricks" },
+      "Feeding the Brickless": { currentPrice: 400000000, upgradePower: 1, count: 0, relatedBuilding: "Holy Church of Bricks" },
+      "Pope Brick-cis": { currentPrice: 500000000, upgradePower: 1, count: 0, relatedBuilding: "Holy Church of Bricks" },
     }
   });
 
@@ -142,25 +142,25 @@ const GameProvider = ({ children }) => {
       "Golden Blade": { currentPrice: 50000, upgradePower: 2, count: 0, relatedBuilding: "Trowel" },
       "Turbo Trowel": { currentPrice: 10000, upgradePower: 2, count: 0, relatedBuilding: "Trowel" },
 
-      "All-Terrain Tires": { currentPrice: 250, upgradePower: 2, count: 0, relatedBuilding: "Wheelbarrow" },
-      "Bronze Tub": { currentPrice: 1250, upgradePower: 1.25, count: 0, relatedBuilding: "Wheelbarrow" },
-      "Silver Tub": { currentPrice: 7500, upgradePower: 1.25, count: 0, relatedBuilding: "Wheelbarrow" },
-      "Golden Tub": { currentPrice: 25000, upgradePower: 1.25, count: 0, relatedBuilding: "Wheelbarrow" },
-      "Turbo Boosted V6": { currentPrice: 50000, upgradePower: 1.25, count: 0, relatedBuilding: "Wheelbarrow" },
+      "All-Terrain Tires": { currentPrice: 1000, upgradePower: 2, count: 0, relatedBuilding: "Wheelbarrow" },
+      "Bronze Tub": { currentPrice: 5000, upgradePower: 1.25, count: 0, relatedBuilding: "Wheelbarrow" },
+      "Silver Tub": { currentPrice: 50000, upgradePower: 1.25, count: 0, relatedBuilding: "Wheelbarrow" },
+      "Golden Tub": { currentPrice: 5000000, upgradePower: 1.25, count: 0, relatedBuilding: "Wheelbarrow" },
+      "Turbo Boosted V6": { currentPrice: 500000000, upgradePower: 1.25, count: 0, relatedBuilding: "Wheelbarrow" },
 
-      "Electric Stove": { currentPrice: 500, upgradePower: 2, count: 0, relatedBuilding: "Oven" },
-      "Gas-Powered Cooker": { currentPrice: 2250, upgradePower: 1.25, count: 0, relatedBuilding: "Oven" },
-      "Silver-plated Door": { currentPrice: 8850, upgradePower: 1.25, count: 0, relatedBuilding: "Oven" },
-      "Crystal Glass": { currentPrice: 35000, upgradePower: 1.25, count: 0, relatedBuilding: "Oven" },
-      "The Oven Light": { currentPrice: 75000, upgradePower: 1.25, count: 0, relatedBuilding: "Oven" },
+      "Electric Stove": { currentPrice: 11000, upgradePower: 2, count: 0, relatedBuilding: "Oven" },
+      "Gas-Powered Cooker": { currentPrice: 55000, upgradePower: 1.25, count: 0, relatedBuilding: "Oven" },
+      "Silver-plated Door": { currentPrice: 550000, upgradePower: 1.25, count: 0, relatedBuilding: "Oven" },
+      "Crystal Glass": { currentPrice: 55000000, upgradePower: 1.25, count: 0, relatedBuilding: "Oven" },
+      "The Oven Light": { currentPrice: 5500000000, upgradePower: 1.25, count: 0, relatedBuilding: "Oven" },
 
-      "Reinforced Forklifts": { currentPrice: 7500, upgradePower: 2, count: 0, relatedBuilding: "Factory" },
-      "OSHA Violations": { currentPrice: 40000, upgradePower: 1.25, count: 0, relatedBuilding: "Factory" },
-      "Amazon Urine Bottles": { currentPrice: 90000, upgradePower: 1.25, count: 0, relatedBuilding: "Factory" },
-      "Weather-Proof Doors": { currentPrice: 375000, upgradePower: 1.25, count: 0, relatedBuilding: "Factory" },
-      "Brick Overseer": { currentPrice: 850000, upgradePower: 1.25, count: 0, relatedBuilding: "Factory" },
+      "Reinforced Forklifts": { currentPrice: 120000, upgradePower: 2, count: 0, relatedBuilding: "Factory" },
+      "OSHA Violations": { currentPrice: 600000, upgradePower: 1.25, count: 0, relatedBuilding: "Factory" },
+      "Amazon Urine Bottles": { currentPrice: 6000000, upgradePower: 1.25, count: 0, relatedBuilding: "Factory" },
+      "Weather-Proof Doors": { currentPrice: 600000000, upgradePower: 1.25, count: 0, relatedBuilding: "Factory" },
+      "Brick Overseer": { currentPrice: 60000000000, upgradePower: 1.25, count: 0, relatedBuilding: "Factory" },
 
-      "Certified Engineers": { currentPrice: 1000, upgradePower: 2, count: 0, relatedBuilding: "Nuclear Brick Plant" },
+      "Certified Engineers": { currentPrice: 1300000, upgradePower: 2, count: 0, relatedBuilding: "Nuclear Brick Plant" },
       "Overheat Protection": { currentPrice: 5500, upgradePower: 1.25, count: 0, relatedBuilding: "Nuclear Brick Plant" },
       "Homer Simpson": { currentPrice: 95000, upgradePower: 1.25, count: 0, relatedBuilding: "Nuclear Brick Plant" },
       "Radroach Infestation": { currentPrice: 450000, upgradePower: 1.25, count: 0, relatedBuilding: "Nuclear Brick Plant" },
@@ -209,6 +209,16 @@ const GameProvider = ({ children }) => {
     }));
   };
 
+  // Function to calculate the number of non-trowel buildings owned
+const getNonTrowelBuildingCount = (buildingStats) => {
+  return Object.keys(buildingStats).reduce((total, building) => {
+    if (building !== "Trowel") {
+      total += buildingStats[building].count;
+    }
+    return total;
+  }, 0);
+};
+
   // Function to handle upgrade purchase
   const purchaseUpgrade = (upgradeName) => {
     setGameState((prevState) => {
@@ -250,7 +260,7 @@ const GameProvider = ({ children }) => {
     setGameState((prevState) => {
       const building = prevState.storePrices[buildingName];
       const buildingCount = prevState.playerStats.buildingStats[buildingName].count;
-      const newPrice = building.basePrice * Math.pow(1.15, buildingCount + 1); // Calculate the new price for the next purchase
+      const newPrice = building.basePrice * Math.pow(1.15, buildingCount); // Calculate the new price for the next purchase
   
       if (prevState.playerStats.brickCount >= building.currentPrice) {
         return {
