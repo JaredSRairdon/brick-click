@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/brick-click/static/css/main.08cb97e9.css",
-    "main.js": "/brick-click/static/js/main.10467239.js",
+    "main.js": "/brick-click/static/js/main.f07031b7.js",
     "static/media/brick_main.png": "/brick-click/static/media/brick_main.2d02b22d1364bebffbe7.png",
     "index.html": "/brick-click/index.html",
     "main.08cb97e9.css.map": "/brick-click/static/css/main.08cb97e9.css.map",
-    "main.10467239.js.map": "/brick-click/static/js/main.10467239.js.map"
+    "main.f07031b7.js.map": "/brick-click/static/js/main.f07031b7.js.map"
   },
   "entrypoints": [
     "static/css/main.08cb97e9.css",
-    "static/js/main.10467239.js"
+    "static/js/main.f07031b7.js"
   ]
 }
