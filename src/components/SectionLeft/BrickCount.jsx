@@ -39,8 +39,13 @@ function BrickCount() {
     return formatted + ' ' + abbreviation;
   }
 
+  function toFixedIfNecessary(value, dp){
+    return +value.toFixed(dp);
+  }
+
   const formattedBrickCount = abbreviateNum(playerStats.brickCount).toLocaleString("en-us");
-  const formattedBricksPerSecond = abbreviateNum(playerStats.bricksPerSecond).toLocaleString("en-us");
+  const formattedBricksPerSecond = toFixedIfNecessary(playerStats.bricksPerSecond, 2)
+  const formattedClickPower = toFixedIfNecessary(playerStats.clickPower, 2)
 
   return (
     <>
@@ -50,9 +55,9 @@ function BrickCount() {
           <p>Bricks</p>
         </div>
         <div className='bricks-per-second'>
-          <p id='per-second'>Per Second: {formattedBricksPerSecond}</p>
+          <p id='per-second'>Per Second: {(formattedBricksPerSecond).toLocaleString("en-us")}</p>
           <br/>
-          <p id='click-power'>Click Power: {Math.trunc(playerStats.clickPower).toLocaleString('en-us')}</p>
+          <p id='click-power'>Click Power: {formattedClickPower.toLocaleString('en-us')}</p>
         </div>
       </div>
     </>

@@ -5,9 +5,13 @@ import { GameContext } from '../../contexts/GameContext';
 function UpgradeStore() {
   const { clickUpgrades } = useContext(GameContext);
 
+  const sortedUpgrades = Object.keys(clickUpgrades).sort((a, b) => {
+    return clickUpgrades[a].currentPrice - clickUpgrades[b].currentPrice;
+  });
+
   return (
     <div className='upgrade-store'>
-      {Object.keys(clickUpgrades).map((upgradeName) => (
+      {sortedUpgrades.map((upgradeName) => (
         <UpgradeStoreItem key={upgradeName} upgradeName={upgradeName}/>
       ))}
     </div>
