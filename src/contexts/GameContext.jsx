@@ -3,6 +3,27 @@ import React, { createContext, useEffect, useState, useCallback } from 'react';
 // Create a new context
 const GameContext = createContext();
 
+/* 
+  ------------  TODO  ------------
+
++ trowelBonus is only a one-time bonus at the moment, based on how many non-trowel buildings are owned at the time of purchase
+  trowelBonus needs to be updated/increased everytime a non-trowel building is purchased or else the game is too hard
+
++ Display owned buildings and their upgrade level on the buidling purchase 
+
++ Fix responsiveness / auto scrolling issue on iOS
+
++ Add Total Elapsed Time as a stat
+
++ Add fun visuals for each click
+
++ Add confirmation prompt for resetting stats
+
+*/
+
+
+
+
 // Create a provider component
 const GameProvider = ({ children }) => {
   const [gameState, setGameState] = useState({
@@ -14,16 +35,16 @@ const GameProvider = ({ children }) => {
       clickPower: 1,
       buildingCount: 0,
       buildingStats: {
-        "Trowel": { count: 0, upgrades: 0 },
-        "Wheelbarrow": { count: 0, upgrades: 0 },
-        "Oven": { count: 0, upgrades: 0 },
-        "Factory": { count: 0, upgrades: 0 },
-        "Nuclear Brick Plant": { count: 0, upgrades: 0 },
-        "Brick Cultivation Pods": { count: 0, upgrades: 0 },
-        "Brick-a-tron": { count: 0, upgrades: 0 },
-        "Mother of Bricks": { count: 0, upgrades: 0 },
-        "Brick Government": { count: 0, upgrades: 0 },
-        "Holy Church of Bricks": { count: 0, upgrades: 0 }
+        "Trowel": { count: 0, upgrades: 1 },
+        "Wheelbarrow": { count: 0, upgrades: 1 },
+        "Oven": { count: 0, upgrades: 1 },
+        "Factory": { count: 0, upgrades: 1 },
+        "Nuclear Brick Plant": { count: 0, upgrades: 1 },
+        "Brick Cultivation Pods": { count: 0, upgrades: 1 },
+        "Brick-a-tron": { count: 0, upgrades: 1 },
+        "Mother of Bricks": { count: 0, upgrades: 1 },
+        "Brick Government": { count: 0, upgrades: 1 },
+        "Holy Church of Bricks": { count: 0, upgrades: 1 }
       },
     },
     storePrices: {
@@ -202,26 +223,28 @@ const GameProvider = ({ children }) => {
     }
   });
 
+  const [trowelBonus, setTrowelBonus] = useState(0);
+
   // Function to increment brickCount by the user's clickPower amount (called when user clicks the brick)
   const incrementBrickCountByClickPower = () => {
     setGameState((prevState) => ({
       ...prevState,
       playerStats: {
         ...prevState.playerStats,
-        brickCount: prevState.playerStats.brickCount + prevState.playerStats.clickPower,
+        brickCount: prevState.playerStats.brickCount + prevState.playerStats.clickPower + trowelBonus,
       }
     }));
   };
 
   // Function to calculate the number of non-trowel buildings owned
-const getNonTrowelBuildingCount = (buildingStats) => {
-  return Object.keys(buildingStats).reduce((total, building) => {
-    if (building !== "Trowel") {
-      total += buildingStats[building].count;
-    }
-    return total;
-  }, 0);
-};
+  const getNonTrowelBuildingCount = (buildingStats) => {
+    return Object.keys(buildingStats).reduce((total, building) => {
+      if (building !== "Trowel") {
+        total += buildingStats[building].count;
+      }
+      return total;
+    }, 0);
+  };
 
   // Function to handle upgrade purchase
   const purchaseUpgrade = (upgradeName) => {
@@ -239,6 +262,7 @@ const getNonTrowelBuildingCount = (buildingStats) => {
           switch (relatedBuildingStats.upgrades) {
             case 3:
               trowelBonus = getNonTrowelBuildingCount(prevState.playerStats.buildingStats) * 0.1
+
               console.log(`case 3: ${trowelBonus}`)
               break;
             case 4:
@@ -326,6 +350,30 @@ const getNonTrowelBuildingCount = (buildingStats) => {
     });
   };
 
+  // Calculates the new trowelBonus when a players buildingStats changes
+  // useEffect(() => {
+  //   switch (playerStats.buildingStats["Trowel"].upgrades) {
+  //     case 3:
+  //       trowelBonus = getNonTrowelBuildingCount(prevState.playerStats.buildingStats) * 0.1
+  //       console.log(`case 3: ${trowelBonus}`)
+  //       break;
+  //     case 4:
+  //       trowelBonus = getNonTrowelBuildingCount(prevState.playerStats.buildingStats) * 5;
+  //       console.log(`case 4: ${trowelBonus}`)
+  //       break;
+  //     case 5:
+  //       trowelBonus = getNonTrowelBuildingCount(prevState.playerStats.buildingStats) * 10;
+  //       console.log(`case 5: ${trowelBonus}`)
+  //       break;
+  //     default:
+  //       if (relatedBuildingStats.upgrades > 5) {
+  //         trowelBonus = getNonTrowelBuildingCount(prevState.playerStats.buildingStats) * 20;
+  //         console.log(`default: ${trowelBonus}`)
+  //       }
+  //   }
+    
+  // }, [gameState.playerStats.buildingStats]);
+
   // Loads the saved game state from localStorage
   useEffect(() => {
     const savedGameState = localStorage.getItem("gameState");
@@ -351,7 +399,7 @@ const getNonTrowelBuildingCount = (buildingStats) => {
         ...prevState,
         playerStats: {
           ...prevState.playerStats,
-          brickCount: prevState.playerStats.brickCount + (prevState.playerStats.bricksPerSecond / 10)
+          brickCount: prevState.playerStats.brickCount + (prevState.playerStats.bricksPerSecond / 10) + trowelBonus
         }
       }));
     }, 100);

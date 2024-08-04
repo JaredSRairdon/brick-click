@@ -7,7 +7,7 @@ function SectionRight() {
   return (
     <>
       <div className='section-right'>
-        <h1>Store</h1>
+        <h1 style={{color:"white"}}>Store</h1>
         <UpgradeStore/>
         <BuildingStore/>
       </div>

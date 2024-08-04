@@ -28,7 +28,7 @@ function UpgradeStoreItem({ upgradeName }) {
     <button className={`upgrade-store-item ${isLocked ? "locked":""} ${isVisible ? "":"hidden"} ${isPurchased ? "hidden":""}`} onClick={handleUpgrade}>
         <p>{upgradeName}</p>
         <p>{clickUpgrade.currentPrice.toLocaleString("en-us", { maximumFractionDigits: 0 })}🧱</p>
-        <p>{clickUpgrade.upgradePower}x</p>
+        <p>{clickUpgrade.relatedBuilding}</p>
         <h1>?</h1>
         <label>{clickUpgrade.currentPrice.toLocaleString("en-us", { maximumFractionDigits: 0 })}</label>
     </button>

@@ -31,6 +31,11 @@ TODO
         <p>{buildingName}</p>
         <p>{Math.trunc(building.currentPrice).toLocaleString("en-us")} Bricks</p>
         <p>+{building.bpsUpgradeAmount}bps</p>
+        <div id='building-stats'>
+          <p id='building-count'>{playerStats.buildingStats[buildingName].count}</p>
+          <p id='upgrade-count'>Level {playerStats.buildingStats[buildingName].upgrades}</p>
+        </div>
+
         <h1>?</h1>
         <label>{Math.trunc(building.currentPrice).toLocaleString("en-us")}</label>
     </button>

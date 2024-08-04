@@ -27,6 +27,11 @@ html, body {
   .section {
       margin-top: 6rem;
   }
+
+  .app {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /* ============ MEDIA QUERIES (SMALL DEVICES/PHONE) =========== */

@@ -192,11 +192,6 @@
 
 /* ============ MEDIA QUERIES (MEDIUM DEVICES/TABLET) =========== */
 @media screen and (max-width: 1024px) {
-
-}
-
-/* ============ MEDIA QUERIES (SMALL DEVICES/PHONE) =========== */
-@media screen and (max-width: 600px) {
   .section-left {
     width: 70%;
   }
@@ -216,4 +211,9 @@
   .stats {
     width: 90%;
   }
+}
+
+/* ============ MEDIA QUERIES (SMALL DEVICES/PHONE) =========== */
+@media screen and (max-width: 600px) {
+
 }
